@@ -10,6 +10,8 @@ public interface IYankiService {
 
     Mono<Yanki> getYankiById(String id);
 
+    Mono<Yanki> getYankiByPhoneNumber(String phone);
+
     Mono<Yanki> save(Yanki yanki);
 
     Mono<Yanki> update(Yanki yanki);

@@ -27,6 +27,13 @@ public class YankiController {
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/phone/{phone}")
+    public Mono<ResponseEntity<Yanki>> findByPhoneNumberId(@PathVariable("phone") String phone){
+        return service.getYankiByPhoneNumber(phone)
+                .map(savedMessage -> ResponseEntity.ok(savedMessage))
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
     @PostMapping
     Mono<Yanki> postYanki(@RequestBody Yanki yanki){
         return service.save(yanki);

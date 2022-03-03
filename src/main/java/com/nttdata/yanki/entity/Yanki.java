@@ -14,5 +14,4 @@ public class Yanki {
     private String imei;
     private String email;
     private Double balance;
-    private String accountId;
 }

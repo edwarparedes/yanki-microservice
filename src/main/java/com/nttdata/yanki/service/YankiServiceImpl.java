@@ -13,6 +13,8 @@ public class YankiServiceImpl implements IYankiService {
     @Autowired
     IYankiRepository repository;
 
+
+
     @Override
     public Flux<Yanki> getAll() {
         return repository.findAll();
@@ -21,6 +23,11 @@ public class YankiServiceImpl implements IYankiService {
     @Override
     public Mono<Yanki> getYankiById(String id) {
         return repository.findById(id);
+    }
+
+    @Override
+    public Mono<Yanki> getYankiByPhoneNumber(String phone) {
+        return repository.findByPhoneNumber(phone);
     }
 
     @Override
